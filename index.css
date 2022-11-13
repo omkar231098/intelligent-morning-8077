@@ -348,5 +348,66 @@ color: rgb(0, 0, 0);
   justify-content: space-between;
   margin: auto;
   width: 85%;
+  height: auto;
   padding-top: 40px;
+  align-items: center;
 }
+
+
+.bottom-icon{
+display: flex;
+justify-content: space-between;
+margin: auto;
+text-align: left;
+width: 85%;
+}
+
+.bottom-icon>div{
+  font-family: 'Lato', sans-serif;
+}
+.bottom-icon>div>button{
+  font-family: 'Lato', sans-serif;
+  color: white;
+  background-color: #060606;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 15px;
+
+}
+
+.customer-panel{
+display: flex;
+
+width: 85%;
+margin: auto;
+padding-top: 50px;
+text-align: left;
+flex-direction: row;
+
+
+}
+
+.customer-panel1{
+  
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.customer{
+display: flex;
+flex-direction: row;
+align-items: center;
+height: auto;
+width: 85%;
+
+}
+.customer-panel2{
+  
+  display: flex;
+  flex-direction: row;
+  width:50%;
+  justify-content: space-between;
+}
+
