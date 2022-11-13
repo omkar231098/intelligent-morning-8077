@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+        
+        #container>div>img{
+            width:100%;
+        }
+        #container>div{
+            text-align: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+       
+        button{
+            padding: 10px;
+            font-size: 15px;
+        }
+        
+        @media all and (min-width:200px) and (max-width:500px) {
+          #container{
+            grid-template-columns: repeat(2,1fr);
+            
+          }
+        }
+        </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+
+
+let cartItems=JSON.parse(localStorage.getItem("cartproducts"))
+
+displayCard(cartItems)
+
+function displayCard(data){
+
+document.querySelector("#container").innerHTML="";
+
+data.forEach(function(elem){
+
+    let div=document.createElement("div")
+
+let imageProd=document.createElement("img")
+imageProd.setAttribute("src",elem.Image)
+
+
+let title=document.createElement("h2")
+title.style.fontFamily="'Lato', sans-serif"
+title.style.fontSize="15px"
+title.innerText=elem.title
+
+
+
+let cost=document.createElement("p")
+cost.innerText=elem.price
+cost.style.fontFamily="'Lato', sans-serif"
+
+
+let btn=document.createElement("button")
+btn.style.backgroundColor="black"
+btn.style.color="white"
+btn.innerText="Buy Now"
+btn.addEventListener("click",function(){
+    window.open("Buy.html");
+})
+
+
+div.append(imageProd,title,cost,btn)
+
+document.querySelector("#container").append(div)
+
+
+
+
+})
+
+}
+
+
+
+
+
+
+
+
+
+</script>
